@@ -1,8 +1,10 @@
 #!/bin/sh
 set -e
 
+BUILD_DIR=$1
+
 echo "Installing libxmlsec1 and libxmlsec1-openssl"
-apt-get update
-apt-get install -y libxmlsec1 libxmlsec1-openssl
+apt-get update -o Dir::Etc::sourcelist="sources.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
+apt-get install -y --no-install-recommends libxmlsec1 libxmlsec1-openssl
 
 echo "Libraries installed"
