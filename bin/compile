@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+
+echo "Installing libxmlsec1 and libxmlsec1-openssl"
+apt-get update
+apt-get install -y libxmlsec1 libxmlsec1-openssl
+
+echo "Libraries installed"
