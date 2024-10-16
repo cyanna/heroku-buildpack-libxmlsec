@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
+# Set the LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 echo "LD_LIBRARY_PATH is set to $LD_LIBRARY_PATH"
+
+# Create the vendor/lib directory if it doesn't exist
 mkdir -p $BUILD_DIR/vendor/lib
+
+# Copy the necessary libraries to the vendor/lib directory
 cp -r $BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu/* $BUILD_DIR/vendor/lib/
