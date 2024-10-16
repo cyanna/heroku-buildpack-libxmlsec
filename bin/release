@@ -1,2 +1,4 @@
-#!/bin/sh
-exit 0
+#!/usr/bin/env bash
+
+echo "default_process_types:"
+echo "  web: bundle exec rails server -p \$PORT"
