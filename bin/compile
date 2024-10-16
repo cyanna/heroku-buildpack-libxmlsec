@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# Print the value of BUILD_DIR for debugging
+# Use PWD to determine the build directory
+BUILD_DIR=$PWD
 echo "BUILD_DIR is set to $BUILD_DIR"
 
 # Set the LD_LIBRARY_PATH
