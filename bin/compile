@@ -3,13 +3,13 @@
 set -e
 
 echo "-----> CHECKING /usr/lib"
-find /usr/lib -name 'libxmlsec1*' || echo "libxmlsec1 not found in /usr/lib"
+find /usr/lib -name 'libxmlsec1*' -exec ls -l {} \; || echo "libxmlsec1 not found in /usr/lib"
 
 echo "-----> CHECKING /usr/local/lib"
-find /usr/local/lib -name 'libxmlsec1*' || echo "libxmlsec1 not found in /usr/local/lib"
+find /usr/local/lib -name 'libxmlsec1*' -exec ls -l {} \; || echo "libxmlsec1 not found in /usr/local/lib"
 
 echo "-----> CHECKING /usr"
-find /usr -name 'libxmlsec1*' || echo "libxmlsec1 not found in /usr"
+find /usr -name 'libxmlsec1*' -exec ls -l {} \; || echo "libxmlsec1 not found in /usr"
 
 echo "-----> CHECKING /usr/local"
-find /usr/local -name 'libxmlsec1*' || echo "libxmlsec1 not found in /usr/local"
+find /usr/local -name 'libxmlsec1*' -exec ls -l {} \; || echo "libxmlsec1 not found in /usr/local"
