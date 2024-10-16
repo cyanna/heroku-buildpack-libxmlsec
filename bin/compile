@@ -3,6 +3,6 @@
 set -e
 
 echo "-----> CHECKING /usr/lib"
-echo "ls /usr/lib | grep libxmlsec1"
+ls /usr/lib | grep libxmlsec1
 echo "-----> CHECKING /usr/local/lib"
-echo "ls /usr/local/lib | grep libxmlsec1"
+ls /usr/local/lib | grep libxmlsec1
