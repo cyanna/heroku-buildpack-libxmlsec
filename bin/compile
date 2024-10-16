@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Use PWD to determine the temporary build directory
-BUILD_DIR=$PWD
+# Check if BUILD_DIR is set, otherwise use PWD
+BUILD_DIR=${BUILD_DIR:-$PWD}
 echo "BUILD_DIR is set to $BUILD_DIR"
 
 # Set the LD_LIBRARY_PATH
