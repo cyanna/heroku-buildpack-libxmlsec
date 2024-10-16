@@ -13,3 +13,12 @@ find /usr -name 'libxmlsec1*' -exec ls -l {} \; || echo "libxmlsec1 not found in
 
 echo "-----> CHECKING /usr/local"
 find /usr/local -name 'libxmlsec1*' -exec ls -l {} \; || echo "libxmlsec1 not found in /usr/local"
+
+echo "-----> CHECKING /lib"
+find /lib -name 'libxmlsec1*' -exec ls -l {} \; || echo "libxmlsec1 not found in /lib"
+
+echo "-----> CHECKING /lib64"
+find /lib64 -name 'libxmlsec1*' -exec ls -l {} \; || echo "libxmlsec1 not found in /lib64"
+
+echo "-----> CHECKING /"
+find / -name 'libxmlsec1*' -exec ls -l {} \; || echo "libxmlsec1 not found in /"
