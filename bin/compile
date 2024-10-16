@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 BUILD_DIR=$1
+CACHE_DIR=$2
 
 # Ensure the .apt directory exists
 if [ -d "$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu" ]; then
@@ -13,4 +14,12 @@ if [ -d "$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu" ]; then
   echo "export LD_LIBRARY_PATH=$BUILD_DIR/.heroku/vendor/lib:\$LD_LIBRARY_PATH" > $BUILD_DIR/.profile.d/libxmlsec1.sh
 else
   echo "Directory $BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu does not exist"
+fi
+
+# Run the application's bin/compile script if it exists
+if [ -f "$BUILD_DIR/bin/compile" ]; then
+  echo "Running application's bin/compile script"
+  $BUILD_DIR/bin/compile $BUILD_DIR $CACHE_DIR
+else
+  echo "Application's bin/compile script not found"
 fi
