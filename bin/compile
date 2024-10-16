@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Print the value of BUILD_DIR for debugging
+echo "BUILD_DIR is set to $BUILD_DIR"
+
 # Set the LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 echo "LD_LIBRARY_PATH is set to $LD_LIBRARY_PATH"
