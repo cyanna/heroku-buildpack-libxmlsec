@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Use PWD to determine the build directory
-BUILD_DIR=$PWD
+# Use a relative path to navigate to the correct build directory
+BUILD_DIR=$(dirname $0)/../../..
 echo "BUILD_DIR is set to $BUILD_DIR"
 
 # Set the LD_LIBRARY_PATH
