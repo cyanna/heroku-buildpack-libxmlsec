@@ -13,6 +13,12 @@ if [ -d "$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu" ]; then
   export LD_LIBRARY_PATH=$BUILD_DIR/.heroku/vendor/lib:$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
   echo "LD_LIBRARY_PATH is set to $LD_LIBRARY_PATH"
 
+  # List the contents of the library directories
+  echo "Contents of $BUILD_DIR/.heroku/vendor/lib:"
+  ls -l $BUILD_DIR/.heroku/vendor/lib
+  echo "Contents of $BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu:"
+  ls -l $BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu
+
   # Create a profile script to set LD_LIBRARY_PATH at runtime
   mkdir -p $BUILD_DIR/.profile.d
   echo "export LD_LIBRARY_PATH=$BUILD_DIR/.heroku/vendor/lib:$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu:\$LD_LIBRARY_PATH" > $BUILD_DIR/.profile.d/libxmlsec1.sh
